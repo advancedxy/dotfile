@@ -21,6 +21,7 @@
      (git :variables
           git-gutter-use-fringe t)
      markdown
+     osx
      org
      syntax-checking
      scala
@@ -76,7 +77,7 @@ before layers configuration."
                                :size 13
                                :weight normal
                                :width normal
-                               :powerline-scale 1.1)
+                               :powerline-scale 1.4)
    ;; The leader key
    dotspacemacs-leader-key "SPC"
    ;; The leader key accessible in `emacs state' and `insert state'
@@ -144,6 +145,7 @@ before layers configuration."
   "Configuration function.
  This function is called at the very end of Spacemacs initialization after
 layers configuration."
+  (setq powerline-default-separator 'bar)
 )
 
 ;; Do not write anything past this comment. This is where Emacs will

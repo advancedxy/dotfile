@@ -1,0 +1,9 @@
+set cpt=l
+set gui=nonavigation,nobookmarks
+
+" key mapping
+noremap j 10j
+noremap k 10k
+
+noremap h gT
+noremap l gt

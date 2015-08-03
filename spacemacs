@@ -149,6 +149,8 @@ layers configuration."
   (setq powerline-default-separator 'bar)
   (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
                                    "xelatex -interaction nonstopmode %f"))
+  (load-file (concat user-emacs-directory "private/user-custom.el"))
+  (setq user-mail-address "advancedxy@gmail.com")
 (org-babel-do-load-languages
  'org-babel-load-languages
  '(

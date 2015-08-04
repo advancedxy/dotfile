@@ -58,17 +58,14 @@ before layers configuration."
    ;; dotspacemacs-startup-banner 'official
    dotspacemacs-startup-banner 'official
    ;; t if you always want to see the changelog at startup
-   dotspacemacs-always-show-changelog t
+   dotspacemacs-always-show-changelog nil
    ;; List of items to show in the startup buffer. If nil it is disabled.
    ;; Possible values are: `recents' `bookmarks' `projects'."
    dotspacemacs-startup-lists '(recents projects)
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(solarized-light
-                         solarized-dark
-                         leuven
-                         monokai
+   dotspacemacs-themes '(monokai
                          zenburn)
    ;; If non nil the cursor color matches the state color.
    dotspacemacs-colorize-cursor-according-to-state t
@@ -102,7 +99,7 @@ before layers configuration."
    ;; If non nil a progress bar is displayed when spacemacs is loading. This
    ;; may increase the boot time on some systems and emacs builds, set it to
    ;; nil ;; to boost the loading time.
-   dotspacemacs-loading-progress-bar t
+   dotspacemacs-loading-progress-bar nil
    ;; If non nil the frame is fullscreen when Emacs starts up.
    ;; (Emacs 24.4+ only)
    dotspacemacs-fullscreen-at-startup nil
@@ -144,23 +141,30 @@ before layers configuration."
 
 (defun dotspacemacs/config ()
   "Configuration function.
- This function is called at the very end of Spacemacs initialization after
-layers configuration."
+   This function is called at the very end of Spacemacs initialization after
+   layers configuration."
   (setq powerline-default-separator 'bar)
   (setq org-latex-pdf-process '("xelatex -interaction nonstopmode %f"
-                                   "xelatex -interaction nonstopmode %f"))
+                                "xelatex -interaction nonstopmode %f"))
+
+  ;; Show line numbers
+  (global-linum-mode t)
+  ;; Follow symlinks
+  (setq vc-follow-symlinks t)
+  ;; Set fill-column-indicator on for all files. Auto fill mode is disabled by default
+  (add-hook 'after-change-major-mode-hook 'fci-mode)
   (load-file (concat user-emacs-directory "private/user-custom.el"))
   (setq user-mail-address "advancedxy@gmail.com")
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '(
-   (python . t)
-   (ruby . t)
-   (ditaa . t)
-   (dot . t)
-   (sqlite . t)
-   ))
-)
+  (org-babel-do-load-languages
+    'org-babel-load-languages
+    '(
+      (python . t)
+      (ruby . t)
+      (ditaa . t)
+      (dot . t)
+      (sqlite . t)
+      ))
+  )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

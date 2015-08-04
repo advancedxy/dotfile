@@ -153,6 +153,10 @@ before layers configuration."
   (setq vc-follow-symlinks t)
   ;; Set fill-column-indicator on for all files. Auto fill mode is disabled by default
   (add-hook 'after-change-major-mode-hook 'fci-mode)
+  ;; Python language hook
+  (add-hook 'python-mode-hook
+            (lambda ()
+            (set-fill-column 100)))
   (load-file (concat user-emacs-directory "private/user-custom.el"))
   (setq user-mail-address "advancedxy@gmail.com")
   (org-babel-do-load-languages

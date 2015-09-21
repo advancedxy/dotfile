@@ -28,6 +28,7 @@
      scala
      python
      haskell
+     php
      html
      shell-scripts
      )

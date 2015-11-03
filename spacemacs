@@ -169,6 +169,11 @@ before layers configuration."
       (dot . t)
       (sqlite . t)
       ))
+  ;; Fcitx-remote support
+  (add-to-list 'load-path (concat user-emacs-directory "private/fcitx.el"))
+  (require 'fcitx)
+  (fcitx-evil-turn-on)
+  (fcitx-aggressive-minibuffer-turn-on)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will

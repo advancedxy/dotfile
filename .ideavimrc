@@ -1,0 +1,41 @@
+set nowrapscan
+ 
+set ignorecase
+ 
+set smartcase
+ 
+set hlsearch
+ 
+set scrolloff=10
+ 
+inoremap <C-[> <Esc>
+ 
+nnoremap x "_x
+vnoremap x "_x
+ 
+vnoremap v ^$h
+ 
+vnoremap < <gv
+vnoremap > >gv
+ 
+noremap <CR> i<CR><Esc>
+ 
+inoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-n> <Down>
+inoremap <C-p> <Up>
+
+nnoremap j gj
+nnoremap k gk
+
+vnoremap v $h
+
+set clipboard=unnamed,unnamedplus
+set mouse=a
+set shellslash
+set expandtab 
+set autoindent 
+
+inoremap jk <Esc>
+
+set rnu

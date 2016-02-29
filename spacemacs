@@ -208,12 +208,21 @@ layers configuration. You are free to put any user code."
   (global-linum-mode t)
   ;; Follow symlinks
   (setq vc-follow-symlinks t)
-  ;; Set fill-column-indicator on for all files. Auto fill mode is disabled by default
-  (add-hook 'after-change-major-mode-hook 'fci-mode)
+  ;; Set fill-column-indicator on for all files. Auto fill mode is disabled by
+  ;; default
+  ;; (add-hook 'after-change-major-mode-hook 'fci-mode)
+  (add-hook 'after-change-major-mode-hook
+            (lambda ()
+              (fci-mode 1)
+              (turn-on-auto-fill)
+              ))
   ;; Python language hook
+  ;; This function should add to last of hook function list as there is a python
+  ;; set up function in spacemacs python layer.
   (add-hook 'python-mode-hook
             (lambda ()
-              (set-fill-column 99)))
+              (set-fill-column 99))
+            'non-nil)
   (load-file (concat user-emacs-directory "private/user-custom.el"))
   (setq user-mail-address "advancedxy@gmail.com")
   (org-babel-do-load-languages

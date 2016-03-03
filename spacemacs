@@ -39,6 +39,7 @@ values."
      version-control
      scala
      python
+     go
      haskell
      php
      html

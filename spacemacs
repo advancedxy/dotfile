@@ -34,7 +34,7 @@ values."
      (shell :variables
             shell-default-height 30
             shell-default-position 'bottom)
-     spell-checking
+     (syntax-checking :variables syntax-checking-enable-tooltips nil)
      syntax-checking
      version-control
      scala

@@ -38,4 +38,4 @@ set autoindent
 
 inoremap jk <Esc>
 
-set rnu
+set nu

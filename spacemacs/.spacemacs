@@ -321,12 +321,5 @@ you should place your code here."
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/private/snippets.custom")
   (yas-reload-all)
   )
-
-(defun yas--magit-email-or-default ()
-  "Get email from GIT or use default"
-  (let ((email (magit-get "user.email")))
-    (if email
-        email
-      user-mail-address)))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

@@ -319,7 +319,6 @@ you should place your code here."
 
   ;; custom-snippet-dirs
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/private/snippets.custom")
-  (yas-reload-all)
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

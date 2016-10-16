@@ -56,6 +56,9 @@ values."
      (python :variables
              python-fill-column 99)
      c-c++
+     ;; ycmd
+     gtags
+     javascript
      chinese
      )
    ;; List of additional packages that will be installed without being
@@ -299,12 +302,20 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+  ;; Uncomment the follow line to use proxy when used in server.
+  ;; (setq url-proxy-services
+  ;;       '(
+  ;;         ("no_proxy" . "^\\(localhost\\|10.*\\|127.0.0.1\\|*.baidu.com\\)")
+  ;;         ("http" . "agent.baidu.com:8188")
+  ;;         ("https" . "agent.baidu.com:8188")
+  ;;         ))
+
   (setq configuration-layer--elpa-archives
         '(
           ("popkit" . "elpa.popkit.org/packages/")
-          ;;("melpa" . "melpa.org/packages/")
+          ("melpa" . "melpa.org/packages/")
           ;;("org"   . "orgmode.org/elpa/")
-          ;;("gnu"   . "elpa.gnu.org/packages/")
+          ("gnu"   . "elpa.gnu.org/packages/")
           ))
   )
 
@@ -326,6 +337,10 @@ you should place your code here."
 
   ;; custom-snippet-dirs
   (add-to-list 'yas-snippet-dirs "~/.emacs.d/private/snippets.custom")
+
+  ;; Follow links
+  (setq vc-follow-symlinks t)
+
   )
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
